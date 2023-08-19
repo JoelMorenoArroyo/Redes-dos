@@ -1,0 +1,41 @@
+Preguntas reflexivas de ambientación.
+
+¿Cual es la dirección de red y de broadcast de un host que tiene una ip 192.168.10.10/30?.
+
+La dirección de red y de broadcast de un host con la IP 192.168.10.10/30 son las siguientes:
+
+- Dirección de red: Para calcular la dirección de red, se realiza una operación AND entre la dirección IP y la máscara de subred. En este caso, la máscara de subred /30 tiene un valor de 255.255.255.252 en formato decimal. Realizando la operación AND, se obtiene la dirección de red: 192.168.10.8[6].
+
+- Dirección de broadcast: La dirección de broadcast es la última dirección de la subred y se utiliza para enviar datos a todos los hosts dentro de la red. En este caso, la dirección de broadcast sería la siguiente dirección después de la dirección de red. Para una máscara /30, que tiene un tamaño de subred de 4 direcciones, la dirección de broadcast sería 192.168.10.11[6].
+
+Por lo tanto, la dirección de red es 192.168.10.8 y la dirección de broadcast es 192.168.10.11.
+
+¿Que información se puede inferir de un host con la dirección 169.254.255.200/26?.
+
+La dirección IP 169.254.255.200/26 pertenece a la clase de direcciones IP reservadas para el uso de enlaces locales o APIPA (Automatic Private IP Addressing). Estas direcciones se asignan automáticamente a dispositivos cuando no pueden obtener una dirección IP válida de un servidor DHCP.
+
+Al analizar la dirección IP 169.254.255.200/26, podemos inferir lo siguiente:
+
+1. **Dirección IP**: La dirección IP es 169.254.255.200. Esta dirección se encuentra en el rango reservado para enlaces locales.
+
+2. **Máscara de subred**: La máscara de subred /26 indica que los primeros 26 bits de la dirección IP representan la parte de red y los últimos 6 bits representan la parte de host.
+
+3. **Rango de direcciones**: Con una máscara de subred /26, el rango de direcciones válido para hosts sería desde 169.254.255.192 hasta 169.254.255.255. Sin embargo, la dirección específica 169.254.255.200 se encuentra dentro de este rango.
+
+4. **Número de hosts**: Con una máscara de subred /26, hay un total de 64 direcciones posibles para hosts. Sin embargo, algunas de estas direcciones pueden estar reservadas para otros fines, como la dirección de broadcast y la dirección de red.
+
+En resumen, la información que se puede inferir de un host con la dirección 169.254.255.200/26 es que pertenece a la clase de direcciones IP reservadas para enlaces locales y que se encuentra dentro de un rango de direcciones válido para hosts con una máscara de subred /26.
+
+¿Cuantas sub-redes puede lograr con la mascara 172.16.0.0/22?.
+
+Para calcular cuántas subredes se pueden lograr con la máscara 172.16.0.0/22, podemos utilizar la fórmula 2^n, donde "n" es el número de bits que se han tomado prestados de la porción de host. En este caso, la máscara /22 utiliza 22 bits para la porción de red y 10 bits para la porción de host. Por lo tanto, se han tomado prestados 10 bits de la porción de host. La fórmula 2^n nos dice que podemos crear 2^10 subredes, lo que equivale a 1024 subredes[1]. Por lo tanto, con la máscara 172.16.0.0/22, se pueden lograr 1024 subredes.
+
+¿Cuantos clientes puede tener la sub red 172.16.0.0/22?.
+
+Para determinar cuántos clientes puede tener la subred 172.16.0.0/22, es necesario conocer la cantidad de direcciones IP disponibles en la subred. La máscara de subred /22 indica que los primeros 22 bits de la dirección IP son parte de la porción de red, mientras que los últimos 10 bits son parte de la porción de host. Esto significa que hay 2^10 - 2 = 1022 direcciones IP disponibles para los clientes en la subred. La resta de 2 se debe a que la dirección de red (172.16.0.0) y la dirección de broadcast (172.16.3.255) no se pueden asignar a dispositivos[1]. Por lo tanto, la subred 172.16.0.0/22 puede tener hasta 1022 clientes.
+
+¿Que clase y tipo de dirección es 10.10.10.0/24?.
+
+La dirección 10.10.10.0/24 es una dirección de red de Clase A[2]. Esto significa que los primeros 8 bits de la dirección IP están reservados para identificar la red, mientras que los últimos 24 bits se utilizan para identificar los dispositivos en la red[5]. En este caso, la máscara de subred es 255.255.255.0, lo que indica que los primeros 24 bits de la dirección IP son fijos y los últimos 8 bits pueden variar para identificar los dispositivos en la red[5].
+
+En resumen, la dirección 10.10.10.0/24 pertenece a una red de Clase A y tiene una máscara de subred de 255.255.255.0, lo que permite hasta 256 direcciones IP en la red[4].
